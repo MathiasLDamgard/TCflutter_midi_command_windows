@@ -164,7 +164,7 @@ class BLEMidiDevice extends MidiDevice {
       if (_midiCharacteristic != null) {
         var isPaired = await UniversalBle.isPaired(deviceId);
         
-        if (isPaired) {
+        if (isPaired ?? false) {
           _startNotify();
         } else {
           try {
